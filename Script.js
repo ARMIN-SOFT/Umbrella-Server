@@ -1,8 +1,8 @@
 const store = new Vuex.Store({
 state: {
 servers: [
-{ name: 'Umbrella Server', location: 'France (Paris), status: true, adr: '192.168.0.24' },
-{ name: 'Umrella Server', location: 'France (Paris), status: true, adr: '192.168.0.25', type: 'database' },
+{ name: 'Umbrella Server', location: 'France (Paris)', status: true, adr: '192.168.0.24' },
+{ name: 'Umrella Server', location: 'France (Paris)', status: true, adr: '192.168.0.25', type: 'database' },
 ] 
 },
 
