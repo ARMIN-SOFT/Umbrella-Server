@@ -26,6 +26,7 @@
 <server-list>
 <server v-for="(server, index) in servers" :class="{ 'has-failed': !server.status }" :type="server.type" @click.native="updateServerStatus(index)">
 <span slot="name" class="data">{{server.name}}</span>
+<span slot="location" class="data">{{server.location}}</span>
 <span slot="status" class="data signal">{{server.status ? 'Online' : 'Offline'}}</span>
 <span slot="adr" class="data">{{server.adr}}</span>
 </server>
