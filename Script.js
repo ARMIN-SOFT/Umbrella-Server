@@ -1,8 +1,8 @@
 const store = new Vuex.Store({
 state: {
 servers: [
-{ name: 'Umbrella Server', status: true, adr: '192.168.0.24' },
-{ name: 'Umrella Server', status: true, adr: '192.168.0.25', type: 'database' },
+{ name: 'Umbrella Server', location: 'France (Paris), status: true, adr: '192.168.0.24' },
+{ name: 'Umrella Server', location: 'France (Paris), status: true, adr: '192.168.0.25', type: 'database' },
 ] 
 },
 
@@ -122,6 +122,7 @@ Vue.component('server', {
 </div>
 <ul class="server-details">
 <li>Server Name:<slot name="name"></slot></li> 
+<li>Location:<slot name="location"></slot></li> 
 <li>Status:<slot name="status"></slot></li>
 <li>IP Address:<slot name="adr"></slot></li>
 </ul>
