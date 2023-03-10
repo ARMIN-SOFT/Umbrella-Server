@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+<meta charset="UTF-8">
+<title>Umbrella Server (STATUS)</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css'><link rel="stylesheet" href="https://armin-soft.ir/Tools/Umbrella-Server/Style.css">
+</head>
+
+<body>
+<div class="interval">
+<ul>
+<li>Weekly</li>
+<li class="active">Monthly</li>
+</ul>
+</div>
+
+<dashboard class="dashboard">
+<dashboard-header title="Umbrella VPN">
+<br/>
+
+<dashboard-clock digital="true" binary="true" />
+</dashboard-header>
+
+<server-list>
+<server v-for="(server, index) in servers" :class="{ 'has-failed': !server.status }" :type="server.type" @click.native="updateServerStatus(index)">
+<span slot="name" class="data">{{server.name}}</span>
+<span slot="status" class="data signal">{{server.status ? 'Online' : 'Offline'}}</span>
+<span slot="adr" class="data">{{server.adr}}</span>
+</server>
+</server-list>
+</dashboard>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/vuex/2.0.0/vuex.min.js'></script><script  src="https://armin-soft.ir/Tools/Umbrella-Server/Script.js"></script>
+</body>
+</html>
